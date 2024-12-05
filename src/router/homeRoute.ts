@@ -3,7 +3,7 @@ import { RouteRecordRaw } from 'vue-router'
 
 const general: Array<RouteRecordRaw> = [
     {
-        path: '/',
+        path: '/BcDocs/',
         name: 'Home',
         component: () => import('@/ABC/pages/bc_doc_http.vue'),
         meta: {
