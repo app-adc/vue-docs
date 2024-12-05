@@ -1,7 +1,7 @@
 import { RouteRecordRaw } from 'vue-router'
 
 const routeBc: RouteRecordRaw = {
-    path: '/bc',
+    path: '/BcDocs',
     meta: {
         group: 'BC',
         title: 'app components',
@@ -12,7 +12,7 @@ const routeBc: RouteRecordRaw = {
             component: () => import('@/ABC/pages/bc_doc_http.vue'),
         },
         {
-            path: 'icon',
+            path: 'bc/icon',
             component: () => import('@/ABC/pages/bc_doc_icon.vue'),
         },
         {
