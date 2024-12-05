@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Gradient Background -->
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fc5400;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff8f00;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Clip Path for Background Shape -->
+    <clipPath id="hexClip">
+      <path d="M16 2 L28 9 L28 23 L16 30 L4 23 L4 9 Z" />
+    </clipPath>
+  </defs>
+  
+  <!-- Hexagonal Background with Gradient -->
+  <path d="M16 2 L28 9 L28 23 L16 30 L4 23 L4 9 Z" 
+    fill="url(#grad)" />
+    
+  <!-- Abstract Lines -->
+  <g stroke="white" stroke-width="0.5" fill="none" opacity="0.3">
+    <path d="M4 16 L28 16" />
+    <path d="M16 2 L16 30" />
+    <path d="M4 9 L28 23" />
+    <path d="M4 23 L28 9" />
+  </g>
+  
+  <!-- Bc Text with Modern Style -->
+  <text x="16" y="20" 
+    font-family="Arial, sans-serif" 
+    font-weight="900"
+    font-size="14"
+    fill="white"
+    text-anchor="middle"
+    style="letter-spacing: -1px">
+    Bc
+  </text>
+  
+  <!-- Decorative Dot -->
+  <circle cx="16" cy="8" r="1.5" fill="white" opacity="0.8"/>
+  
+  <!-- Dynamic Lines -->
+  <g stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.8">
+    <path d="M13 24 L19 24" />
+  </g>
+</svg>

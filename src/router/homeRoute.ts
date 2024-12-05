@@ -7,7 +7,7 @@ const homeRoute: Array<RouteRecordRaw> = [
         name: 'Home',
         component: () => import('@/ABC/pages/bc_doc_http.vue'),
         meta: {
-            title: `${AppTitle} | Home`,
+            title: `${AppTitle}Home`,
         },
     },
 ]
