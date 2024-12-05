@@ -8,10 +8,6 @@ const routeBc: RouteRecordRaw = {
     },
     children: [
         {
-            path: '/',
-            component: () => import('@/ABC/pages/bc_doc_http.vue'),
-        },
-        {
             path: 'http-client',
             component: () => import('@/ABC/pages/bc_doc_http.vue'),
         },
