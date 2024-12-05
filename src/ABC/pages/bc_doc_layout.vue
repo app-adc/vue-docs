@@ -51,8 +51,8 @@ function useLayoutNavigation() {
                 {
                     label: 'ADC',
                     icon: 'Globe',
-                    path: '/BcDocs/',
-                    selected: router.currentRoute.value.path === '/BcDocs/',
+                    path: '/',
+                    selected: router.currentRoute.value.path === '/',
                 },
                 {
                     label: 'Icon',
