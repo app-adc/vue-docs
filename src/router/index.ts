@@ -1,13 +1,12 @@
 import bcRoute from '@/ABC/bc-route'
-import general from '@/router/generalRoute'
 import { createRouter, createWebHistory } from 'vue-router'
 
 import { storeApp } from '@/store/app'
 
-const routes = [...bcRoute, ...general]
+const routes = [...bcRoute]
 
 const router = createRouter({
-    history: createWebHistory('/BcDocs/'), // แก้จาก createWebHistory() เป็น createWebHistory('/BcDocs/')
+    history: createWebHistory(),
     routes,
     scrollBehavior(to) {
         if (to.hash) {
