@@ -1,0 +1,127 @@
+@import './tailwind.css';
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --font_primary: 'Kanit', sans-serif;
+    --busy_loading: RGBA(255, 255, 255, 0.5);
+
+    --h_input: 2.75rem; /*ความสูงของ input*/
+    --borderRadius: 0.375em; /*ขอบมนของ input*/
+    --h_nav: 4rem; /*ความสูงของ navbar*/
+    --iconSize: 1.5rem; /*ขนาดของ icon*/
+    --w_aside: 15rem; /*ความกว้างของ aside*/
+
+    --primary: #e62031; /*สีหลัก*/
+    --secondary: #ffc4cd; /*สีรอง*/
+    --tertiary: pink; /*สีที่สาม*/
+
+    --table: #212936; /*สีพื้นหลังของ table*/
+
+    --white: #fff; /*สีขาว*/
+    --success: #65a30d;
+    --warning: #f59e0b;
+    --error: red;
+    --border: #cbd5e1; /*slate-300*/
+    --icon: #cbd5e1; /*slate-300*/
+    --body: #fbfcfd; /*background body */
+    --color: #1e293b; /*font color  slate 800*/
+    --backdrop: rgba(0, 0, 0, 0.6);
+    --disabled: #f1f5f9;
+}
+[calendar='root'] {
+    --font-family: var(--font-family) !important;
+    --background: #fff !important;
+    --picker: var(--primary) !important;
+    --text-picker: #fff !important;
+    --current: var(--secondary) !important;
+    --text-current: #fff !important;
+    --text: var(--color) !important;
+    --text-week: #1e293b !important;
+    --dateRadius: 3rem !important;
+    --borderRadius: 0.75rem !important;
+    --border: none !important;
+    --width: 300px !important;
+    --text-color: #fff !important;
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1) !important;
+}
+
+.text-primary {
+    color: var(--primary);
+}
+.text-secondary {
+    color: var(--secondary);
+}
+.text-tertiary {
+    color: var(--tertiary);
+}
+.text-success {
+    color: var(--success);
+}
+.text-warning {
+    color: var(--warning);
+}
+.text-error {
+    color: var(--error);
+}
+.text-color {
+    color: var(--color);
+}
+.text-disabled {
+    color: var(--disabled);
+}
+.text-white {
+    color: #fff;
+}
+
+.bg-primary {
+    background-color: var(--primary);
+}
+.bg-secondary {
+    background-color: var(--secondary);
+}
+.bg-tertiary {
+    background-color: var(--tertiary);
+}
+.bg-success {
+    background-color: var(--success);
+}
+.bg-warning {
+    background-color: var(--warning);
+}
+.bg-error {
+    background-color: var(--error);
+}
+.bg-color {
+    background-color: var(--color);
+}
+.bg-disabled {
+    background-color: var(--disabled);
+}
+.bg-white {
+    background-color: #fff;
+}
+
+.border-primary {
+    border-color: var(--primary);
+}
+.border-secondary {
+    border-color: var(--secondary);
+}
+.border-tertiary {
+    border-color: var(--tertiary);
+}
+.border-success {
+    border-color: var(--success);
+}
+.border-warning {
+    border-color: var(--warning);
+}
+.border-error {
+    border-color: var(--error);
+}
+.border-color {
+    border-color: var(--color);
+}
+.border-disabled {
+    border-color: var(--disabled);
+}

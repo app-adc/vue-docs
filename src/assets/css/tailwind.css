@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html,
+body {
+    font-family: var(--font_primary);
+}
+th,
+td {
+    font-family: var(--font_primary);
+}
+@media (min-width: 768px) {
+    :root {
+        --h_select_list: 300px;
+    }
+
+    body.open-modal {
+        --h_select_list: 200px;
+    }
+}
+body.open-modal {
+    --h_select_list: 200px;
+}
+body.open-modal {
+    overflow: hidden;
+}
