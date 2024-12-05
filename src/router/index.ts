@@ -1,5 +1,5 @@
 import bcRoute from '@/ABC/bc-route'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 import homeRoute from '@/router/homeRoute'
 import { storeApp } from '@/store/app'
@@ -7,7 +7,7 @@ import { storeApp } from '@/store/app'
 const routes = [...bcRoute, ...homeRoute]
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(), // เปลี่ยนเป็น hash mode
     routes,
     scrollBehavior(to) {
         if (to.hash) {
