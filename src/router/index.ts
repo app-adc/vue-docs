@@ -7,7 +7,7 @@ import { storeApp } from '@/store/app'
 const routes = [...bcRoute, ...homeRoute]
 
 const router = createRouter({
-    history: createWebHistory('/BcDocs/'),
+    history: createWebHistory(),
     routes,
     scrollBehavior(to) {
         if (to.hash) {
