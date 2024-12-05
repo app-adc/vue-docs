@@ -1,7 +1,7 @@
 import { RouteRecordRaw } from 'vue-router'
 
 const routeBc: RouteRecordRaw = {
-    path: '/BcDocs',
+    path: '/bc',
     meta: {
         group: 'BC',
         title: 'app components',
