@@ -6,7 +6,7 @@ import { storeApp } from '@/store/app'
 const routes = [...bcRoute]
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHistory('/BcDocs/'), // แก้จาก createWebHistory() เป็น createWebHistory('/BcDocs/')
     routes,
     scrollBehavior(to) {
         if (to.hash) {
