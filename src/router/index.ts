@@ -1,9 +1,10 @@
 import bcRoute from '@/ABC/bc-route'
 import { createRouter, createWebHistory } from 'vue-router'
 
+import homeRoute from '@/router/homeRoute'
 import { storeApp } from '@/store/app'
 
-const routes = [...bcRoute]
+const routes = [...bcRoute, ...homeRoute]
 
 const router = createRouter({
     history: createWebHistory(),

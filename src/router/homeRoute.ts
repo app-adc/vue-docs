@@ -1,7 +1,7 @@
 import { AppTitle } from '@/store/app'
 import { RouteRecordRaw } from 'vue-router'
 
-const general: Array<RouteRecordRaw> = [
+const homeRoute: Array<RouteRecordRaw> = [
     {
         path: '/BcDocs/',
         name: 'Home',
@@ -12,4 +12,4 @@ const general: Array<RouteRecordRaw> = [
     },
 ]
 
-export default general
+export default homeRoute
