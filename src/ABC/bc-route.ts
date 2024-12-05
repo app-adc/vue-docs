@@ -96,9 +96,6 @@ const routeBc: RouteRecordRaw = {
     ],
 }
 
-const rules = ['local', 'dev']
-const isLocalEnvOrDev = import.meta.env.VITE_TEST_SERVER
-
 const routes: Array<RouteRecordRaw> = []
-if (rules.includes(isLocalEnvOrDev)) routes.push(routeBc)
+routes.push(routeBc)
 export default routes
