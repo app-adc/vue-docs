@@ -5,6 +5,7 @@ import { defineConfig } from 'vite'
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [vue()],
+    base: '/BcDocs/', // เปลี่ยน repository-name เป็นชื่อ repository ของคุณ
 
     server: {
         port: 3000,
@@ -32,6 +33,7 @@ export default defineConfig({
         // Option 1: Use esbuild (faster)
         minify: 'esbuild',
         target: 'esnext',
+        outDir: 'dist', // โฟลเดอร์ output หลัง build
 
         /* // Option 2: Use Terser (more configurable)
     minify: 'terser',
@@ -45,6 +47,8 @@ export default defineConfig({
 
         // Split chunks for better caching
         rollupOptions: {
+            input: '/index.html',
+
             output: {
                 manualChunks: {
                     vendor: ['vue', 'vue-router', 'pinia', '@vueuse/core'],
