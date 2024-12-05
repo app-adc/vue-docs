@@ -10,6 +10,14 @@ const homeRoute: Array<RouteRecordRaw> = [
             title: `${AppTitle} | Home`,
         },
     },
+    {
+        path: '/', // เปลี่ยนจาก /BcDocs/
+        name: 'Home',
+        component: () => import('@/ABC/pages/bc_doc_http.vue'),
+        meta: {
+            title: `${AppTitle} | Home`,
+        },
+    },
 ]
 
 export default homeRoute

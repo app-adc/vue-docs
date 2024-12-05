@@ -7,7 +7,7 @@ import { storeApp } from '@/store/app'
 const routes = [...bcRoute, ...homeRoute]
 
 const router = createRouter({
-    history: createWebHashHistory(), // เปลี่ยนเป็น hash mode
+    history: createWebHashHistory(), // เปลี่ยนเป็น createWebHashHistory
     routes,
     scrollBehavior(to) {
         if (to.hash) {
