@@ -11,11 +11,11 @@
     --iconSize: 1.5rem; /*ขนาดของ icon*/
     --w_aside: 15rem; /*ความกว้างของ aside*/
 
-    --primary: #fc5400; /*สีหลัก*/
-    --secondary: #ffc4cd; /*สีรอง*/
-    --tertiary: pink; /*สีที่สาม*/
+    --primary: #d9eafd; /*สีหลัก*/
+    --secondary: #bcccdc; /*สีรอง*/
+    --tertiary: #9aa6b2; /*สีที่สาม*/
 
-    --table: #212936; /*สีพื้นหลังของ table*/
+    --table: var(--tertiary); /*สีพื้นหลังของ table*/
 
     --white: #fff; /*สีขาว*/
     --success: #65a30d;
