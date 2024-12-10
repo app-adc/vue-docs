@@ -148,7 +148,7 @@ const methodsData = [
             <div class="overflow-x-auto">
                 <table class="w-full border-collapse">
                     <thead>
-                        <tr class="bg-slate-800 text-white">
+                        <tr class="bg-table text-slate-700">
                             <th class="border p-3 text-left w-1/6">Property</th>
                             <th class="border p-3 text-left w-1/4">Type</th>
                             <th class="border p-3 text-left w-1/6">Default</th>
@@ -185,7 +185,7 @@ const methodsData = [
             <div class="overflow-x-auto">
                 <table class="w-full border-collapse">
                     <thead>
-                        <tr class="bg-slate-800 text-white">
+                        <tr class="bg-table text-slate-700">
                             <th class="border p-3 text-left w-1/6">Method</th>
                             <th class="border p-3 text-left w-1/4">
                                 Parameters

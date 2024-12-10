@@ -150,7 +150,7 @@ const copyCode = async (code: string) => {
             <div class="overflow-x-auto">
                 <table class="w-full border-collapse">
                     <thead>
-                        <tr class="bg-slate-800 text-white">
+                        <tr class="bg-table text-slate-700">
                             <th class="border p-2 text-left w-1/6">Prop</th>
                             <th class="border p-2 text-left w-1/4">Type</th>
                             <th class="border p-2 text-left w-1/6">Default</th>

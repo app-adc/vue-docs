@@ -168,7 +168,7 @@ const copyCode = (code: string) => {
             <div class="overflow-x-auto">
                 <table class="w-full border-collapse">
                     <thead>
-                        <tr class="bg-table text-white">
+                        <tr class="bg-table text-slate-700">
                             <th class="border p-2 text-left">Prop</th>
                             <th class="border p-2 text-left">Type</th>
                             <th class="border p-2 text-left">Default</th>
@@ -205,7 +205,7 @@ const copyCode = (code: string) => {
             <div class="overflow-x-auto">
                 <table class="w-full border-collapse">
                     <thead>
-                        <tr class="bg-table text-white">
+                        <tr class="bg-table text-slate-700">
                             <th class="border p-2 text-left">Event</th>
                             <th class="border p-2 text-left">Payload</th>
                             <th class="border p-2 text-left">คำอธิบาย</th>
