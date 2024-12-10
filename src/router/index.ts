@@ -20,7 +20,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    document.title = `BcDocs | ${to.meta.title}`
+    document.title = `Docs | ${to.meta.title}`
     let appStore = storeApp()
     appStore.setRouteFrom(from.fullPath)
     to.meta.back = from.fullPath

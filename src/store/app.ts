@@ -24,7 +24,7 @@ const dfState = (): State => ({
     },
 })
 
-export const AppTitle = 'BcDocs | '
+export const AppTitle = 'Docs | '
 
 export const storeApp = defineStore('storeApp', {
     state: () => dfState(),
