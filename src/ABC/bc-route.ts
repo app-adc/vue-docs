@@ -76,11 +76,6 @@ const routeBc: RouteRecordRaw = {
             component: () => import('@/ABC/pages/bc_doc_time_range.vue'),
         },
         {
-            path: 'adc-directives',
-            component: () =>
-                import('@/ABC/pages/directives/doc_adc_directives.vue'),
-        },
-        {
             path: 'upload-image-preview',
             component: () =>
                 import('@/ABC/pages/bc_doc_upload_image_preview.vue'),
