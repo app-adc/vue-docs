@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import type { IconName } from '@/ABC/bc-types'
 import BcIcon from '@/ABC/components/BcIcon.vue'
-import BcMultiselect from '@/ABC/components/BcMultiSelect.vue'
 import BcToast from '@/ABC/components/BcToast.vue'
 import BcLayout from '@/ABC/pages/bc_doc_layout.vue'
 import { reactive, ref } from 'vue'
+import BcMultiSelect from '../components/BcMultiSelect.vue'
 import MultiselectPlayground from './children/MultiselectPlayground.vue'
 
 // Props documentation
@@ -337,7 +337,7 @@ const copyCode = async (code: string) => {
                 <!-- Live Example -->
                 <div class="bg-slate-50 p-4 rounded-lg">
                     <template v-if="example.title === 'การใช้งานพื้นฐาน'">
-                        <BcMultiselect
+                        <BcMultiSelect
                             id="basic-multiselect"
                             :data-value="exampleStates.basic"
                             :items="itemsData"
@@ -360,7 +360,7 @@ const copyCode = async (code: string) => {
                     </template>
 
                     <template v-if="example.title === 'การจำกัดจำนวนการเลือก'">
-                        <BcMultiselect
+                        <BcMultiSelect
                             id="limited-multiselect"
                             :data-value="exampleStates.limited"
                             :items="itemsData"
@@ -392,7 +392,7 @@ const copyCode = async (code: string) => {
                     <template
                         v-if="example.title === 'การปรับแต่ง Item Template'"
                     >
-                        <BcMultiselect
+                        <BcMultiSelect
                             id="custom-multiselect"
                             :data-value="exampleStates.custom"
                             :items="itemsData"
@@ -424,7 +424,7 @@ const copyCode = async (code: string) => {
                                     >
                                 </div>
                             </template>
-                        </BcMultiselect>
+                        </BcMultiSelect>
                     </template>
                 </div>
             </div>
