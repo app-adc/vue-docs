@@ -80,6 +80,12 @@ function useLayoutNavigation() {
                     selected: router.currentRoute.value.path === '/bc/select',
                 },
                 {
+                    label: 'Multi Select',
+                    icon: 'ListFilter',
+                    path: '/bc/multi-select',
+                    selected: router.currentRoute.value.path === '/bc/multi-select',
+                },
+                {
                     label: 'Pagination',
                     icon: 'MoveHorizontal',
                     path: '/bc/pagination',

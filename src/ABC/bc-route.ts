@@ -28,6 +28,10 @@ const routeBc: RouteRecordRaw = {
             component: () => import('@/ABC/pages/bc_doc_select.vue'),
         },
         {
+            path: 'multi-select',
+            component: () => import('@/ABC/pages/bc_doc_multi_select.vue'),
+        },
+        {
             path: 'pagination',
             component: () => import('@/ABC/pages/bc_doc_pagination.vue'),
         },
