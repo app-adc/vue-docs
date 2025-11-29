@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { IconName } from '@/ABC/bc-types'
 import BcIcon from '@/ABC/components/BcIcon.vue'
-import BcMultiselect from '@/ABC/components/BcMultiSelect.vue'
+import BcMultiSelect from '@/ABC/components/BcMultiSelect.vue'
 import BcToast from '@/ABC/components/BcToast.vue'
 import { computed, ref } from 'vue'
 
@@ -311,12 +311,12 @@ const getRoleColor = (role: string) =>
             </div>
 
             <!-- Live Demo -->
-            <BcMultiselect
+            <BcMultiSelect
                 id="basic-multiselect"
-                v-model:data-value="selectedUsers"
+                :data-value="selectedUsers"
                 :items="users"
-                :reduce-value="(user) => user.id"
-                :reduce-label="(user) => user.name"
+                :reduce-value="(a: User) => a.id"
+                :reduce-label="(a: User) => a.name"
                 :max="maxValue"
                 :disabled="disabled"
                 :is-loading="isLoading"
@@ -351,8 +351,8 @@ const getRoleColor = (role: string) =>
                 id="custom-multiselect"
                 v-model:data-value="selectedUsers"
                 :items="users"
-                :reduce-value="(user) => user.id"
-                :reduce-label="(user) => user.name"
+                :reduce-value="(user: User) => user.id"
+                :reduce-label="(user: User) => user.name"
                 :max="maxValue"
                 :disabled="disabled"
                 label="เลือกผู้ใช้ (แบบกำหนดเอง)"
@@ -415,8 +415,8 @@ const getRoleColor = (role: string) =>
                 id="icon-multiselect"
                 v-model:data-value="selectedUsers"
                 :items="users"
-                :reduce-value="(user) => user.id"
-                :reduce-label="(user) => user.name"
+                :reduce-value="(user: User) => user.id"
+                :reduce-label="(user: User) => user.name"
                 :max="maxValue"
                 :disabled="disabled"
                 label="เลือกผู้ใช้ (พร้อม Icon)"
