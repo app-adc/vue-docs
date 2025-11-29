@@ -235,14 +235,11 @@ watchEffect(() => {
     >
         <div class="relative w-full">
             <!-- Selected items tags -->
-            <div
-                class="flex flex-wrap gap-1 mb-1"
-                v-if="selectedItems.length > 0"
-            >
+            <div class="flex flex-wrap gap-1" v-if="selectedItems.length > 0">
                 <div
                     v-for="(item, index) in selectedItems"
                     :key="index"
-                    class="flex items-center gap-1 px-2 py-1 bg-primary text-white rounded"
+                    class="flex items-center gap-1 px-2 bg-primary text-white rounded"
                 >
                     <span class="w-full px-6 text-base">{{
                         reduceLabel(item)
@@ -268,27 +265,27 @@ watchEffect(() => {
                     />
                 </div>
             </div>
-
-            <input
-                ref="inputElement"
-                :id="id"
-                :value="inputValue"
-                class="w-full disabled:bg-[#F9FAFB]"
-                :class="{ '!pl-9': icon }"
-                :placeholder="getPlaceholder"
-                :disabled="disabled"
-                @input="handleInput"
-                @keydown="handleKeyDown"
-                @focus="handleFocus"
-                @blur="handleBlur"
-                autocomplete="off"
-            />
-            <i
-                role="icon-arrow"
-                :aria-expanded="isFocused"
-                class="pointer-events-none"
-            />
-
+            <div class="mt-2 relative flex items-center">
+                <input
+                    ref="inputElement"
+                    :id="id"
+                    :value="inputValue"
+                    class="w-full disabled:bg-[#F9FAFB]"
+                    :class="{ '!pl-9': icon }"
+                    :placeholder="getPlaceholder"
+                    :disabled="disabled"
+                    @input="handleInput"
+                    @keydown="handleKeyDown"
+                    @focus="handleFocus"
+                    @blur="handleBlur"
+                    autocomplete="off"
+                />
+                <i
+                    role="icon-arrow"
+                    :aria-expanded="isFocused"
+                    class="pointer-events-none"
+                />
+            </div>
             <!-- Dropdown -->
             <ul v-if="isFocused" role="options-container">
                 <template v-if="filteredItems.length">
