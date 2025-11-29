@@ -2,6 +2,7 @@
 import type { IconName } from '@/ABC/bc-types'
 import BcIcon from '@/ABC/components/BcIcon.vue'
 import BcMultiselect from '@/ABC/components/BcMultiSelect.vue'
+import BcToast from '@/ABC/components/BcToast.vue'
 import { computed, ref } from 'vue'
 
 interface User {
@@ -78,6 +79,10 @@ const maxLimit = ref<number>(0) // 0 = unlimited
 const disabled = ref(false)
 const isLoading = ref(false)
 
+// Toast
+const showToast = ref(false)
+const toastMessage = ref('')
+
 // Computed
 const maxValue = computed(() =>
     maxLimit.value > 0 ? maxLimit.value : undefined
@@ -87,6 +92,72 @@ const selectedCount = computed(() => selectedUsers.value.length)
 const selectedItems = computed(() =>
     users.value.filter((u) => selectedUsers.value.includes(u.id))
 )
+
+// Code examples
+const codeExamples = {
+    basic: `<BcMultiselect
+    id="basic-multiselect"
+    v-model:data-value="selectedUsers"
+    :items="users"
+    :reduce-value="(user) => user.id"
+    :reduce-label="(user) => user.name"
+    :max="3"
+    label="เลือกผู้ใช้"
+    placeholder="เลือกผู้ใช้ที่ต้องการ"
+    @selected="handleSelected"
+/>`,
+    custom: `<BcMultiselect
+    id="custom-multiselect"
+    v-model:data-value="selectedUsers"
+    :items="users"
+    :reduce-value="(user) => user.id"
+    :reduce-label="(user) => user.name"
+    label="เลือกผู้ใช้"
+>
+    <template #item="{ item, label, selected }">
+        <div class="flex items-center justify-between w-full py-1">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold shadow-md">
+                    {{ label.charAt(0) }}
+                </div>
+                <div>
+                    <div class="font-medium">{{ label }}</div>
+                    <div class="text-xs text-gray-500">{{ item.email }}</div>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-xs px-2 py-1 rounded-full bg-blue-500 text-white">
+                    {{ item.role }}
+                </span>
+                <span v-if="selected" class="text-green-600 font-bold text-lg">✓</span>
+            </div>
+        </div>
+    </template>
+</BcMultiselect>`,
+    icons: `<BcMultiselect
+    id="icon-multiselect"
+    v-model:data-value="selectedUsers"
+    :items="users"
+    :reduce-value="(user) => user.id"
+    :reduce-label="(user) => user.name"
+    label="เลือกผู้ใช้"
+>
+    <template #item="{ item, label, selected }">
+        <div class="flex items-center justify-between w-full">
+            <div class="flex items-center gap-2">
+                <BcIcon 
+                    :name="item.icon" 
+                    size="20" 
+                    :color="selected ? 'primary' : 'icon'" 
+                />
+                <span>{{ label }}</span>
+                <span class="text-xs text-gray-500">- {{ item.role }}</span>
+            </div>
+            <span v-if="selected" class="text-blue-600 font-bold">✓</span>
+        </div>
+    </template>
+</BcMultiselect>`,
+}
 
 // Methods
 const handleSelected = (items: User[]) => {
@@ -107,6 +178,17 @@ const simulateLoading = () => {
     setTimeout(() => {
         isLoading.value = false
     }, 2000)
+}
+
+const copyCode = async (code: string) => {
+    try {
+        await navigator.clipboard.writeText(code)
+        toastMessage.value = 'คัดลอกโค้ดแล้ว!'
+        showToast.value = true
+    } catch (err) {
+        toastMessage.value = 'ไม่สามารถคัดลอกได้'
+        showToast.value = true
+    }
 }
 
 // Color variants for tags
@@ -210,7 +292,25 @@ const getRoleColor = (role: string) =>
 
         <!-- Example 1: Basic -->
         <div class="mb-8">
-            <h3 class="font-bold text-lg mb-4">1. การใช้งานพื้นฐาน</h3>
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="font-bold text-lg">1. การใช้งานพื้นฐาน</h3>
+            </div>
+
+            <!-- Code -->
+            <div class="relative bg-slate-800 rounded-lg p-4 mb-4">
+                <button
+                    @click="copyCode(codeExamples.basic)"
+                    class="absolute top-2 right-2 p-2 hover:bg-slate-700 rounded transition-colors"
+                    title="คัดลอกโค้ด"
+                >
+                    <BcIcon name="Copy" size="20" color="white" />
+                </button>
+                <pre
+                    class="text-sm text-slate-200 overflow-x-auto"
+                ><code>{{ codeExamples.basic }}</code></pre>
+            </div>
+
+            <!-- Live Demo -->
             <BcMultiselect
                 id="basic-multiselect"
                 v-model:data-value="selectedUsers"
@@ -228,7 +328,25 @@ const getRoleColor = (role: string) =>
 
         <!-- Example 2: Custom Template -->
         <div class="mb-8">
-            <h3 class="font-bold text-lg mb-4">2. Custom Item Template</h3>
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="font-bold text-lg">2. Custom Item Template</h3>
+            </div>
+
+            <!-- Code -->
+            <div class="relative bg-slate-800 rounded-lg p-4 mb-4">
+                <button
+                    @click="copyCode(codeExamples.custom)"
+                    class="absolute top-2 right-2 p-2 hover:bg-slate-700 rounded transition-colors"
+                    title="คัดลอกโค้ด"
+                >
+                    <BcIcon name="Copy" size="20" color="white" />
+                </button>
+                <pre
+                    class="text-sm text-slate-200 overflow-x-auto"
+                ><code>{{ codeExamples.custom }}</code></pre>
+            </div>
+
+            <!-- Live Demo -->
             <BcMultiselect
                 id="custom-multiselect"
                 v-model:data-value="selectedUsers"
@@ -274,7 +392,25 @@ const getRoleColor = (role: string) =>
 
         <!-- Example 3: With Icons -->
         <div class="mb-8">
-            <h3 class="font-bold text-lg mb-4">3. พร้อม Icons</h3>
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="font-bold text-lg">3. พร้อม Icons</h3>
+            </div>
+
+            <!-- Code -->
+            <div class="relative bg-slate-800 rounded-lg p-4 mb-4">
+                <button
+                    @click="copyCode(codeExamples.icons)"
+                    class="absolute top-2 right-2 p-2 hover:bg-slate-700 rounded transition-colors"
+                    title="คัดลอกโค้ด"
+                >
+                    <BcIcon name="Copy" size="20" color="white" />
+                </button>
+                <pre
+                    class="text-sm text-slate-200 overflow-x-auto"
+                ><code>{{ codeExamples.icons }}</code></pre>
+            </div>
+
+            <!-- Live Demo -->
             <BcMultiselect
                 id="icon-multiselect"
                 v-model:data-value="selectedUsers"
@@ -360,10 +496,28 @@ const getRoleColor = (role: string) =>
                 }
             }}</pre>
         </details>
+
+        <!-- Toast -->
+        <BcToast
+            v-model="showToast"
+            :message="toastMessage"
+            variant="success"
+            position="top-right"
+            :duration="2000"
+        />
     </div>
 </template>
 
 <style scoped>
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+code {
+    font-family: ui-monospace, monospace;
+}
+
 input[type='number'] {
     -moz-appearance: textfield;
     appearance: textfield;
